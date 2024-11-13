@@ -32,3 +32,21 @@ const addUser = () => {
     payload : {user : "Abrar"}
   };
 };
+
+// Create reducer for counter
+
+const counterReducer = (state = initialCounterState, action) => {
+    switch (action.type) {
+        case INCREMENT:
+            return {
+                ...state, // if multiple items in the sate then we have define it by a spread operator
+                count : state.count + 1,
+            }
+        case DECREMENT:
+            return {
+                count: state.count - 1
+            }
+        default:
+            state;
+    }
+}
